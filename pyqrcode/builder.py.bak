@@ -28,7 +28,7 @@ builds the code. While the various output methods draw the code into a file.
 """
 
 #Imports required for 2.x support
-
+from __future__ import absolute_import, division, print_function, with_statement, unicode_literals
 
 import pyqrcode.tables as tables
 import io
@@ -1059,7 +1059,7 @@ def _xbm(code, scale=1, quiet_zone=4):
     This can be used to display the QR code with Tkinter.
     """
     try:
-        str = str  # Python 2
+        str = unicode  # Python 2
     except NameError:
         str = __builtins__['str']
         
