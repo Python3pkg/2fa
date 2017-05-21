@@ -6,8 +6,10 @@ try:
 except ImportError:
     from itertools import zip_longest as izip_longest
 
-    from urllib.parse import quote, urlencode
-
+try:
+     from urllib.parse import quote, urlencode
+ except ImportError:
+     from urllib import quote, urlencode
 
 def build_uri(secret, name, initial_count=None, issuer_name=None,
               algorithm=None, digits=None, period=None):
