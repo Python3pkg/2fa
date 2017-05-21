@@ -1058,10 +1058,6 @@ def _xbm(code, scale=1, quiet_zone=4):
     """This function will format the QR code as a X BitMap.
     This can be used to display the QR code with Tkinter.
     """
-    try:
-        str = str  # Python 2
-    except NameError:
-        str = __builtins__['str']
         
     buf = io.StringIO()
     

@@ -40,16 +40,9 @@ Examples:
         >>> number.png('big-number.png')
 """
 
-#Imports required for 2.7 support
-
-
 import pyqrcode.tables
 import pyqrcode.builder as builder
 
-try:
-    str = str  # Python 2
-except NameError:
-    pass
 
 def create(content, error='H', version=None, mode=None, encoding=None):
     """When creating a QR code only the content to be encoded is required,
@@ -373,12 +366,8 @@ class QRCode:
         import tempfile
         import webbrowser
  
-        try:  # Python 2
-            from urllib.parse import urljoin
-            from urllib.request import pathname2url
-        except ImportError:  # Python 3
-            from urllib.parse import urljoin
-            from urllib.request import pathname2url
+        from urllib.parse import urljoin
+        from urllib.request import pathname2url
 
         f = tempfile.NamedTemporaryFile('wb', suffix='.png', delete=False)
         self.png(f, scale=scale, module_color=module_color,
