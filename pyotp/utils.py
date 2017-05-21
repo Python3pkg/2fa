@@ -6,9 +6,6 @@ try:
 except ImportError:
     from itertools import zip_longest as izip_longest
 
-try:
-    from urllib.parse import quote, urlencode
-except ImportError:
     from urllib.parse import quote, urlencode
 
 
